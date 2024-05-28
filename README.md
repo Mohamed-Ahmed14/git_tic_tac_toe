@@ -1,7 +1,7 @@
 # tic_tac_toe
 
 A Tic Tac Toe or Xs and Os is a game for two players who take turns marking the spacing in three by three grid with X or O.
-The player who succeeds in placing three of their marks in a horizental or vertical or diagonal row is the winner.
+The player who succeeds in placing three of their marks in a horizontal or vertical or diagonal row is the winner.
 It also can be between one player and a computer which acts as player two and plays with two differnt levels of difficulty easy and hard.
 
 ## Getting Started
@@ -12,12 +12,12 @@ if you want to play alone you just click on play with computer if you want to pl
 
 ### Play With Computer (Single Player Mode)
 
-After choicing play with computer then you have to choice the level of difficulty there are two level first is easy and second is hard.
+After choosing play with computer then you have to choose the level of difficulty there are two level first is easy and second is hard.
 You jsut click on which level you want to start the game.
 
 ### Play With Friend (Two Player Mode)
 
-After choicing play with friend then you have to enter players names and after do that click on the start game button to start the game.
+After choosing play with friend then you have to enter players names and after do that click on the start game button to start the game.
 
 #### Game Board
 
