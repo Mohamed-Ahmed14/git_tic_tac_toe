@@ -172,7 +172,7 @@ class GameCubit extends Cubit<GameState>{
         audioModel.playDrawMusic();
         //print("Draw");
       }
-      await Future.delayed(const Duration(milliseconds: 400));
+      await Future.delayed(const Duration(milliseconds: 300));
       emit(GameEndState());
       await Future.delayed(const Duration(seconds: 1),() => resetGame(),);
 
@@ -194,6 +194,7 @@ class GameCubit extends Cubit<GameState>{
   void endGame(){
     player1nameController.clear();
     player2nameController.clear();
+    //twoPlayerFormKey.currentState!.reset();
     resetGame();
   }
 

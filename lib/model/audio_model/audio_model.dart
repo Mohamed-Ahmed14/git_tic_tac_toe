@@ -16,7 +16,7 @@ class AudioModel{
     player.play(AssetSource("game_music.mp3"),);
   }
   void pauseGameMusic(){
-    player.pause();
+    player.stop();
   }
 
   void playTicMusic(){

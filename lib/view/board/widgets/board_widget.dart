@@ -32,7 +32,7 @@ class BoardWidget extends StatelessWidget {
 
               return InkWell(
                 onTap: (){
-                  if(state is! GameDrawShapeState)
+                  if(state is! GameDrawShapeState && state is! GameEndState)
                     {
                       cubit.play(row,col);
                     }

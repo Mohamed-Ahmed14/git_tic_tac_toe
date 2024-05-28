@@ -22,6 +22,7 @@ class TwoPlayersScreen extends StatelessWidget {
           backgroundColor:AppColor.blueGreyLight,
           leading: IconButton(
             onPressed: (){
+              GameCubit.get(context).endGame();
               Navigator.pop(context);
             },
             icon: Icon(Icons.keyboard_backspace_rounded,color: Colors.blue,size: 30.r,),
@@ -86,7 +87,8 @@ class TwoPlayersScreen extends StatelessWidget {
                             if(GameCubit.get(context).twoPlayerFormKey.currentState!.validate()){
                               FocusScope.of(context).unfocus();
                               GameCubit.get(context).initialTwoPlayersMode();
-                             Navigator.push(context, MaterialPageRoute(builder: (context) =>const BoardScreen(),));
+                             Navigator.pushReplacement(context,
+                                 MaterialPageRoute(builder: (context) =>const BoardScreen(),));
                             }
                           },
                           backgroundColor: Colors.indigo

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:tic_tac_toe/view/board/widgets/board_widget.dart';
 import 'package:tic_tac_toe/view/board/widgets/dialog_widget.dart';
-import 'package:tic_tac_toe/view/intro/screens/mode_screen.dart';
 import 'package:tic_tac_toe/view_model/cubit/cubit.dart';
 import 'package:tic_tac_toe/view/widgets/custom_elevated_button.dart';
 
@@ -22,9 +21,10 @@ class _BoardScreenState extends State<BoardScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
     GameCubit.get(context).audioModel.pauseGameMusic();
+    super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,10 +77,10 @@ class _BoardScreenState extends State<BoardScreen> {
                       onPressed:(){
                         cubit.endGame();
                         cubit.audioModel.playGameMusic();
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(builder: (context) =>const ModeScreen(),),
-                                (route) => false);
+                        Navigator.pop(context);
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(builder: (context) =>const ModeScreen(),));
                       },
                       backgroundColor: AppColor.red,
                       child: Text("End Game",style: TextStyle(
@@ -98,4 +98,18 @@ class _BoardScreenState extends State<BoardScreen> {
       ),
     );
   }
+
+  @override
+  void deactivate() {
+    // TODO: implement deactivate
+    GameCubit.get(context).endGame();
+    GameCubit.get(context).audioModel.playGameMusic();
+    super.deactivate();
+  }
+  // @override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   GameCubit.get(context).audioModel.playGameMusic();
+  //   super.dispose();
+  // }
 }

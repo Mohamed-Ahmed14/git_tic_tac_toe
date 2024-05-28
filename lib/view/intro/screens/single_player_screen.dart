@@ -38,7 +38,8 @@ class SinglePlayerScreen extends StatelessWidget {
           InkWell(
             onTap: (){
               GameCubit.get(context).initialEasyMode();
-              Navigator.push(context, MaterialPageRoute(builder: (context) =>const BoardScreen(),));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) =>const BoardScreen(),));
             },
             child: Container(
               width: MediaQuery.of(context).size.width,
@@ -67,7 +68,8 @@ class SinglePlayerScreen extends StatelessWidget {
           InkWell(
             onTap: (){
               GameCubit.get(context).initialHardMode();
-              Navigator.push(context, MaterialPageRoute(builder: (context) =>const BoardScreen(),));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) =>const BoardScreen(),));
             },
             child: Container(
               width: MediaQuery.of(context).size.width,
@@ -93,9 +95,6 @@ class SinglePlayerScreen extends StatelessWidget {
               ),
             ),
           ),
-
-          
-
 
         ],
       ),
