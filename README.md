@@ -1,16 +1,26 @@
 # tic_tac_toe
 
-A Tic Tac Toe Game, that have to modes which are single player mode and two players mode
+A Tic Tac Toe or Xs and Os is a game for two players who take turns marking the spacing in three by three grid with X or O.
+The player who succeeds in placing three of their marks in a horizental or vertical or diagonal row is the winner.
+It also can be between one player and a computer which acts as player two and plays with two differnt levels of difficulty easy and hard.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+After open the app you just need to click on let's start button to go to the mode screen where in you have choice between two modes
+first mode is Single player mode and the other is Two players mode.
+if you want to play alone you just click on play with computer if you want to play with someone you just click on play with friend.
 
-A few resources to get you started if this is your first Flutter project:
+### Play With Computer (Single Player Mode)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+After choicing play with computer then you have to choice the level of difficulty there are two level first is easy and second is hard.
+You jsut click on which level you want to start the game.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Play With Friend (Two Player Mode)
+
+After choicing play with friend then you have to enter players names and after do that click on the start game button to start the game.
+
+#### Game Board
+
+In the game above the board it shows which player's turn or may be comupter's turn , and below the board there are two buttons one for
+reset the game which is clear the board and the other button to end the game it return you to the mode screen where you can choice a 
+mode again either play with computer nor play with friend.
