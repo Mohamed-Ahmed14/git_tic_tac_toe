@@ -48,7 +48,7 @@ class _BoardScreenState extends State<BoardScreen> {
             children: [
               SizedBox(height: 0.01.sh,),
               RichText(text: TextSpan(
-                  text:"Turn: " ,
+                  text:"Turn : " ,
                   style:TextStyle(
                       color: AppColor.black,fontSize: 20.sp,fontWeight: FontWeight.w600) ,
                   children:[
@@ -59,7 +59,7 @@ class _BoardScreenState extends State<BoardScreen> {
                             fontSize: 20.sp,fontWeight: FontWeight.w600)),
                   ]
               )),
-              SizedBox(height: 0.05.sh,),
+              SizedBox(height: 0.1.sh,),
               const BoardWidget(),
               SizedBox(height: 0.1.sh,),
               Row(

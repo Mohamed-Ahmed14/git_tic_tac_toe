@@ -16,16 +16,18 @@ class BoardWidget extends StatelessWidget {
         var cubit = GameCubit.get(context);
         return Container(
           width: double.infinity,
-          decoration:const BoxDecoration(
+          margin: EdgeInsetsDirectional.symmetric(horizontal: 8.w,vertical: 8.h),
+          decoration: BoxDecoration(
             color: AppColor.black,
           ),
           child: GridView.builder(
-            padding: EdgeInsetsDirectional.all(8.w),
+            padding: EdgeInsetsDirectional.all(5.w),
+            //padding: EdgeInsetsDirectional.zero,
             shrinkWrap: true,
             physics:const  NeverScrollableScrollPhysics(),
             itemCount: 9,
-            gridDelegate:const  SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,crossAxisSpacing: 8,mainAxisSpacing: 8),
+            gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,crossAxisSpacing: 5.w,mainAxisSpacing: 5.h),
             itemBuilder: (context, index) {
               int row = index~/3;
               int col = index%3;
@@ -40,7 +42,7 @@ class BoardWidget extends StatelessWidget {
                 },
                 child: Container(
                   decoration:const  BoxDecoration(
-                    color: AppColor.blueGreyDark,
+                    color: AppColor.blueGreyLight,
                   ),
                   child:  Center(child:  Text(cubit.board[row][col]?.shape ?? "",style: TextStyle(
                     fontSize: 60.sp,fontWeight: FontWeight.w400,

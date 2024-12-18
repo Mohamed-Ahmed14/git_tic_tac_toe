@@ -77,7 +77,7 @@ class SinglePlayerScreen extends StatelessWidget {
               margin: EdgeInsetsDirectional.all(15.w),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               decoration: BoxDecoration(
-                color: Colors.red,
+                color: Colors.black87,
                 borderRadius: BorderRadius.circular(12.r),
               ),
               child: Column(
