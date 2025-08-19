@@ -30,11 +30,11 @@ class DialogWidget extends StatelessWidget {
         children: [
           Text(GameCubit.get(context).title,style: TextStyle(
             color: Colors.pink,
-            fontSize: 30.sp,
+            fontSize: 18.sp,
           ),),
           Text(GameCubit.get(context).description,style: TextStyle(
             color: Colors.black,
-            fontSize: 30.sp,
+            fontSize: 18.sp,
           ),),
           SizedBox(height: 0.02.sh,),
           CustomElevatedButton(

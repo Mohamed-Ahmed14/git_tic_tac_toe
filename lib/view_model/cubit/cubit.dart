@@ -236,19 +236,20 @@ class GameCubit extends Cubit<GameState>{
   //This function represent  Human PLay
   void humanPlay(int row,int col){
     //check if the pressed square in the board is occupied or not
-    if(isSquareEmpty(row,col) == false)
-    {
-      Fluttertoast.showToast(
-          msg: "Invalid Square",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.BOTTOM,
-          timeInSecForIosWeb: 3,
-          backgroundColor: AppColor.white,
-          textColor: AppColor.black,
-          fontSize: 14.0.sp
-      );
-      return;
-    }
+    // if(isSquareEmpty(row,col) == false)
+    // {
+    //   //show toast
+    //   Fluttertoast.showToast(
+    //       msg: "Invalid Square",
+    //       toastLength: Toast.LENGTH_SHORT,
+    //       gravity: ToastGravity.BOTTOM,
+    //       timeInSecForIosWeb: 3,
+    //       backgroundColor: AppColor.white,
+    //       textColor: AppColor.black,
+    //       fontSize: 14.0.sp
+    //   );
+    //   return;
+    // }
     //If the pressed square is not occupied draw shape
     drawShape(row, col);
     //Calculate if Game End or not
@@ -260,6 +261,19 @@ class GameCubit extends Cubit<GameState>{
   //and to calculate if game end or not
   //and change player
   void player2Mode(int row,int col){
+    if(isSquareEmpty(row, col) == false){
+      //show toast
+      Fluttertoast.showToast(
+          msg: "Invalid Square",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 3,
+          backgroundColor: AppColor.white,
+          textColor: AppColor.black,
+          fontSize: 14.0.sp
+      );
+      return;
+    }
     //Call function humanPlay to draw represent human action
     humanPlay(row,col);
     emit(TwoPlayersModeState());
@@ -278,6 +292,20 @@ class GameCubit extends Cubit<GameState>{
   //then apply computer algorithm
   //then calculate if game end (Win / Draw) or not
   void playEasyMode(int row,int col) async{
+
+    if(isSquareEmpty(row, col) == false){
+      //show toast
+      Fluttertoast.showToast(
+          msg: "Invalid Square",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 3,
+          backgroundColor: AppColor.white,
+          textColor: AppColor.black,
+          fontSize: 14.0.sp
+      );
+      return;
+    }
     //Call function humanPlay to draw represent human action
     humanPlay(row,col);
     //if game is end return exit function
@@ -321,6 +349,19 @@ class GameCubit extends Cubit<GameState>{
 
   }
   void playHardMode(int row,int col) async{
+    if(isSquareEmpty(row, col) == false){
+      //show toast
+      Fluttertoast.showToast(
+          msg: "Invalid Square",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 3,
+          backgroundColor: AppColor.white,
+          textColor: AppColor.black,
+          fontSize: 14.0.sp
+      );
+      return;
+    }
     //Call function humanPlay to draw represent human action
     humanPlay(row,col);
     //if game is end return exit function

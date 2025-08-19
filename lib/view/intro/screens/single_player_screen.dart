@@ -32,71 +32,84 @@ class SinglePlayerScreen extends StatelessWidget {
             ]
         ),),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          InkWell(
-            onTap: (){
-              GameCubit.get(context).initialEasyMode();
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) =>const BoardScreen(),));
-            },
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsetsDirectional.all(15.w),
-              margin: EdgeInsetsDirectional.all(15.w),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              decoration: BoxDecoration(
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: Padding(
+          padding: EdgeInsetsDirectional.all(15.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Material(
                 color: Colors.blueAccent,
                 borderRadius: BorderRadius.circular(12.r),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset("assets/images/easy.png",
-                  width: 120.w,height: 120.h,fit: BoxFit.fill,),
-                  SizedBox(height: 0.02.sh,),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(12.r),
+                  onTap: (){
+                    GameCubit.get(context).initialEasyMode();
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) =>const BoardScreen(),));
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsetsDirectional.all(15.w),
+                    // margin: EdgeInsetsDirectional.all(15.w),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset("assets/images/easy.png",
+                        width: 120.w,height: 120.h,fit: BoxFit.fill,),
+                        SizedBox(height: 0.02.sh,),
 
-                  Text("E A S Y",style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 35.sp
-                  ),)
-                ],
+                        Text("E A S Y",style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 35.sp
+                        ),)
+                      ],
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: (){
-              GameCubit.get(context).initialHardMode();
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) =>const BoardScreen(),));
-            },
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsetsDirectional.all(15.w),
-              margin: EdgeInsetsDirectional.all(15.w),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              decoration: BoxDecoration(
+              Material(
                 color: Colors.black87,
                 borderRadius: BorderRadius.circular(12.r),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(12.r),
+                  onTap: (){
+                    GameCubit.get(context).initialHardMode();
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) =>const BoardScreen(),));
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsetsDirectional.all(15.w),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
 
-                  Image.asset("assets/images/hard.png",
-                  width: 120.w,height: 120.h,fit: BoxFit.fill,),
-                  SizedBox(height: 0.02.sh,),
-                  Text("H A R D",style: TextStyle(
-                      color: Colors.indigo[800],
-                      fontSize: 35.sp
-                  ),)
-                ],
+                        Image.asset("assets/images/hard.png",
+                        width: 120.w,height: 120.h,fit: BoxFit.fill,),
+                        SizedBox(height: 0.02.sh,),
+                        Text("H A R D",style: TextStyle(
+                            color: Colors.indigo[800],
+                            fontSize: 35.sp
+                        ),)
+                      ],
+                    ),
+                  ),
+                ),
               ),
-            ),
+
+            ],
           ),
-
-        ],
+        ),
       ),
     );
   }

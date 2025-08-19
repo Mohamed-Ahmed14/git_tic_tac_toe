@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             home: child,
+            title: 'Tic Tac Toe',
           ),
         );
       },

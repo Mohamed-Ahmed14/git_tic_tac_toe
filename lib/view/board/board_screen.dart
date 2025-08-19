@@ -43,54 +43,57 @@ class _BoardScreenState extends State<BoardScreen> {
         },
         builder: (context, state) {
           var cubit = GameCubit.get(context);
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 0.01.sh,),
-              RichText(text: TextSpan(
-                  text:"Turn : " ,
-                  style:TextStyle(
-                      color: AppColor.black,fontSize: 20.sp,fontWeight: FontWeight.w600) ,
-                  children:[
-                    TextSpan(text:cubit.isPlayer1Turn?
-                    cubit.player1nameController.text:cubit.player2nameController.text,
-                        style: TextStyle(
-                        color:cubit.isPlayer1Turn? AppColor.xColor:AppColor.oColor,
-                            fontSize: 20.sp,fontWeight: FontWeight.w600)),
-                  ]
-              )),
-              SizedBox(height: 0.1.sh,),
-              const BoardWidget(),
-              SizedBox(height: 0.1.sh,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                   CustomElevatedButton(
-                       onPressed:(){
-                     cubit.resetGame();
-                   },
-                       backgroundColor: AppColor.indigo,
-                   child: Text("Reset Game",style: TextStyle(
-                     color: AppColor.orangeAccent,fontSize: 16.sp,
-                   ),)),
-                  CustomElevatedButton(
-                      onPressed:(){
-                        cubit.endGame();
-                        cubit.audioModel.playGameMusic();
-                        Navigator.pop(context);
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(builder: (context) =>const ModeScreen(),));
-                      },
-                      backgroundColor: AppColor.red,
-                      child: Text("End Game",style: TextStyle(
-                        color: AppColor.orangeAccent,fontSize: 16.sp,
-                      ),)),
+          return Padding(
+            padding:  EdgeInsetsDirectional.all(8.0.w),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 0.01.sh,),
+                RichText(text: TextSpan(
+                    text:"Turn : " ,
+                    style:TextStyle(
+                        color: AppColor.black,fontSize: 20.sp,fontWeight: FontWeight.w600) ,
+                    children:[
+                      TextSpan(text:cubit.isPlayer1Turn?
+                      cubit.player1nameController.text:cubit.player2nameController.text,
+                          style: TextStyle(
+                          color:cubit.isPlayer1Turn? AppColor.xColor:AppColor.oColor,
+                              fontSize: 20.sp,fontWeight: FontWeight.w600,overflow: TextOverflow.ellipsis)),
+                    ]
+                ),maxLines: 1,),
+                SizedBox(height: 0.1.sh,),
+                const BoardWidget(),
+                SizedBox(height: 0.1.sh,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                     CustomElevatedButton(
+                         onPressed:(){
+                       cubit.resetGame();
+                     },
+                         backgroundColor: AppColor.indigo,
+                     child: Text("Reset Game",style: TextStyle(
+                       color: AppColor.orangeAccent,fontSize: 16.sp,
+                     ),)),
+                    CustomElevatedButton(
+                        onPressed:(){
+                          cubit.endGame();
+                          cubit.audioModel.playGameMusic();
+                          Navigator.pop(context);
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(builder: (context) =>const ModeScreen(),));
+                        },
+                        backgroundColor: AppColor.red,
+                        child: Text("End Game",style: TextStyle(
+                          color: AppColor.orangeAccent,fontSize: 16.sp,
+                        ),)),
 
-                ],
-              ),
+                  ],
+                ),
 
-            ],
+              ],
+            ),
           );
         },
         buildWhen: (previous, current)=>current is GameDrawShapeState || current is ResetGameState,
